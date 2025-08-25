@@ -17,3 +17,7 @@ RUN echo '<Directory /var/www/html>' >> /etc/apache2/apache2.conf && \
     echo '     Require all granted' >> /etc/apache2/apache2.conf && \
     echo '</Directory>' >> /etc/apache2/apache2.conf && \
 
+
+ EXPOSE ${PORT}
+ CMD ["apache2-forgeround"]
+    
