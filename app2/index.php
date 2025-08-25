@@ -15,6 +15,13 @@
 
         <label for="email">Email</label>
         <input type="text" name="email" id="email" required><br>
+
+         <label for="mensgem">Email</label>
+        <textarea name="mensagem" id="mensagem" rows="5"></textarea><br>
+
+        <input type="submit" value="Enviar">
+
+
     </form>
 </body>
 </html>
