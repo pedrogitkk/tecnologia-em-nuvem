@@ -1,17 +1,20 @@
-# Usar uma imagem base do PHP com Apache
+# Usa a imagem oficial do PHP com Apache
 FROM php:8.1-apache
 
-# Ativar o módulo rewrite do Apache
+# Habilita o módulo rewrite do Apache (opcional, mas útil)
 RUN a2enmod rewrite
 
-# Definir o diretório de trabalho
+# Define o diretório de trabalho do Apache
 WORKDIR /var/www/html
 
-# Copiar os arquivos da aplicação para o diretório de trabalho no contêiner
-COPY . /var/www/html/
+# Limpa a pasta padrão do Apache
+RUN rm -rf /var/www/html/*
 
-# Expôr a porta 80
+# Copia o conteúdo da pasta app3 para a raiz do Apache
+COPY app3/ /var/www/html/
+
+# Expõe a porta 80
 EXPOSE 80
 
-# Definir o comando de inicialização (o Apache)
+# Comando para iniciar o Apache
 CMD ["apache2-foreground"]
