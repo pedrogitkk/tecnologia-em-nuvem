@@ -1,11 +1,12 @@
 <?php
 
-functuib stringParaBinario($string){
-  $binario = '';
-foearch(str_split($string as $char){
-        $binario .=str_pad(decbin(ord($char)), 8, '0', str_pad_left) . '';
+function stringParaBinario($string) {
+    $binario = '';
+    foreach(str_split($string) as $char) {
+        $binario .= str_pad(decbin(ord($char)), 8, '0', STR_PAD_LEFT);
+    }
+    return $binario;
 }
-return $binario;
 
 $frase = "olá mundo!";
 $fraseBinario = stringParaBinario($frase);
